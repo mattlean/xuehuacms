@@ -1,4 +1,4 @@
-xuehua
+XuehuaCMS
 ======
 
-A content management system built in Ruby.
+Content management system built for people who prefer HTML and CSS over typical "WYSIWYG" editors.
