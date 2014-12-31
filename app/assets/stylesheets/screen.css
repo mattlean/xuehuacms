@@ -1,3 +1,7 @@
 body {
 	background-color: #ccc;
 }
+
+.flash {
+	background-color: yellow;
+}
