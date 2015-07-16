@@ -1,0 +1,2 @@
+module ScsHelper
+end
