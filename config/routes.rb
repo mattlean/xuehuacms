@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  get 'wcp/index'
+
   devise_for :users, controllers: { registrations: "registrations" }
   get 'welcome/index'
-  get 'scs/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -11,8 +12,7 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-  get '/scs' => 'scs#index'
-  get '/scs/test' => 'scs#test'
+  get '/wcp' => 'wcp#index'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
