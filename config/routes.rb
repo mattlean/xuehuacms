@@ -13,15 +13,26 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   get '/wcp' => 'wcp#index'
+  get '/wcp/test' => 'wcp#test'
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :articles do
+
+=begin
+  namespace :wcp do
+    resources :articles
+  end
+=end
+
+  resources :articles, :path => 'wcp/articles' do
     resources :comments
   end
+
+  get 'blog/:id', to: 'articles#show'
 
   # Example resource route with options:
   #   resources :products do
