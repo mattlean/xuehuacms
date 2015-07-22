@@ -5,6 +5,8 @@ class WcpController < ApplicationController
   	else
   		redirect_to new_user_session_path
   	end
+
+  	render :layout => 'wcp-layout'
   end
 
   def test
