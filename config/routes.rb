@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: "registrations" }
-
-  root 'welcome#index'
+  root 'site#index'
 
   scope '/blog' do
     get '/', to: 'blog#index'
     get ':id', to: 'blog#show'
   end
+
+  devise_for :users, controllers: { registrations: "registrations" }
 
   scope '/wcp' do
     get '/', to: 'wcp#index'
