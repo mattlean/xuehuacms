@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     get ':id', to: 'blog#show'
   end
 
-  devise_for :users, controllers: { registrations: "registrations" }
+  get '/users/sign_up' => redirect('/404.html')
+  devise_for :users, controllers: { registrations: 'registrations' }
 
   scope '/wcp' do
     get '/', to: 'wcp#index'
