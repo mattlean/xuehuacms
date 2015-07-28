@@ -1,7 +1,7 @@
-XuehuaCMS
+Xuehua CMS
 ======
 
-XuehuaCMS is a content management system built for people who prefer HTML and CSS over typical "WYSIWYG" editors.
+Xuehua CMS is an open source content management system built on top of Ruby on Rails.
 
 Technologies used:
 * Ruby
