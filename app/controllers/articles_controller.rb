@@ -24,15 +24,15 @@ class ArticlesController < ApplicationController
 	end
 
 	def show
-		@article = Article.find(params[:id])
+		@article = Article.where(:title => params[:title]).first
 	end
 
 	def edit
-		@article = Article.find(params[:id])
+		@article = Article.where(:title => params[:title]).first
 	end
 
 	def update
-		@article = Article.find(params[:id])
+		@article = Article.where(:title => params[:title]).first
 
 		if @article.update(article_params)
 			redirect_to @article
@@ -42,7 +42,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def destroy
-		@article = Article.find(params[:id])
+		@article = Article.where(:title => params[:title]).first
 		@article.destroy
 
 		redirect_to articles_path

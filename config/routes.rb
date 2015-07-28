@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   scope '/blog' do
     get '/', to: 'blog#index'
-    get ':id', to: 'blog#show'
+    get ':title', to: 'blog#show', as: 'blog_show'
   end
 
   get '/users/sign_up' => redirect('/404.html')
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   scope '/wcp' do
     get '/', to: 'wcp#index'
-    resources :articles, :path => 'articles' do
+    resources :articles, param: :title, :path => 'articles' do
       resources :comments
     end
   end
