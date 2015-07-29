@@ -4,6 +4,6 @@ class BlogController < ApplicationController
   end
 
   def show
-  	@article = Article.where(:title => params[:title]).first
+  	@article = Article.where(:slug => params[:slug]).first
   end
 end

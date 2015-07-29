@@ -26,15 +26,15 @@ class ArticlesController < ApplicationController
 	end
 
 	def show
-		@article = Article.where(:title => params[:title]).first
+		@article = Article.where(:slug => params[:slug]).first
 	end
 
 	def edit
-		@article = Article.where(:title => params[:title]).first
+		@article = Article.where(:slug => params[:slug]).first
 	end
 
 	def update
-		@article = Article.where(:title => params[:title]).first
+		@article = Article.where(:slug => params[:slug]).first
 
 		if @article.update(article_params)
 			redirect_to @article
@@ -44,7 +44,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def destroy
-		@article = Article.where(:title => params[:title]).first
+		@article = Article.where(:slug => params[:slug]).first
 		@article.destroy
 
 		redirect_to articles_path

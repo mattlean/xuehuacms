@@ -1,9 +1,9 @@
 class Article < ActiveRecord::Base
 	has_many :comments, dependent: :destroy
-	validates :title, presence: true, length: { minimum: 2 }
-	validates :slug, presence: true, length: { minimum: 2 }
+	validates :title, presence: true
+	validates :slug, presence: true
 
 	def to_param
-		title.parameterize
+		slug.parameterize
 	end
 end
