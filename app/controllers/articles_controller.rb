@@ -14,6 +14,7 @@ class ArticlesController < ApplicationController
 	def create
 		#render plain: params[:article].inspect
 
+#=begin
 		@article = Article.new(article_params)
 
 		if @article.save
@@ -21,6 +22,7 @@ class ArticlesController < ApplicationController
 		else
 			render 'new'
 		end
+#=end
 	end
 
 	def show
@@ -50,6 +52,6 @@ class ArticlesController < ApplicationController
 
 	private
 		def article_params
-			params.require(:article).permit(:title, :text)
+			params.require(:article).permit(:title, :slug, :text)
 		end
 end
