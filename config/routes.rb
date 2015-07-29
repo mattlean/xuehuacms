@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     get ':slug', to: 'blog#show', as: 'blog_show'
   end
 
-  get '/users/sign_up' => redirect('/404.html')
+  #get '/users/sign_up' => redirect('/404.html')
   devise_for :users, controllers: { registrations: 'registrations' }
 
   scope '/wcp' do
